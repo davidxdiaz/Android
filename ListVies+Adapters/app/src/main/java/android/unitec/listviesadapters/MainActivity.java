@@ -2,7 +2,13 @@ package android.unitec.listviesadapters;
 
     import android.os.Bundle;
     import android.app.Activity;
+    import android.view.View;
+    import android.widget.AdapterView;
+    import android.widget.ImageView;
     import android.widget.ListView;
+    import android.widget.TextView;
+    import android.widget.Toast;
+
     import java.util.ArrayList;
 
 public class MainActivity extends Activity {
@@ -18,6 +24,31 @@ public class MainActivity extends Activity {
         datos.add(new Lista_entrada(R.drawable.Liverpool, "Liverpool", ""));
         datos.add(new Lista_entrada(R.drawable.Madrid, "Real Madrid", ""));
         datos.add(new Lista_entrada(R.drawable.milan, "Milan", ""));
+
+        ListView lista = (ListView) findViewById(R.id.ListView_listado);
+        lista.setAdapter(new Lista_adaptador(this, R.layout.entrada, datos){
+            @Override
+            public void onEntrada(Object entrada, View view) {
+                TextView texto_superior_entrada = (TextView) view.findViewById(R.id.textView_superior);
+                texto_superior_entrada.setText(((Lista_entrada) entrada).get_textoEncima());
+
+                TextView texto_inferior_entrada = (TextView) view.findViewById(R.id.textView_inferior);
+                texto_inferior_entrada.setText(((Lista_entrada) entrada).get_textoDebajo());
+
+                ImageView imagen_entrada = (ImageView) view.findViewById(R.id.imageView_imagen);
+                imagen_entrada.setImageResource(((Lista_entrada) entrada).get_idImagen());
+            }
+        });
+        lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> pariente, View view, int posicion, long id) {
+                Lista_entrada elegido = (Lista_entrada) pariente.getItemAtPosition(posicion);
+
+                CharSequence texto = "Seleccionado: " + elegido.get_textoDebajo();
+                Toast toast = Toast.makeText(MainActivity.this, texto, Toast.LENGTH_LONG);
+                toast.show();
+            }
+        });
     }
 
 }
