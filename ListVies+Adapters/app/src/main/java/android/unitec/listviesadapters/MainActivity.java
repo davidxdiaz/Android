@@ -23,7 +23,7 @@ public class MainActivity extends Activity {
         datos.add(new Lista_entrada(R.drawable.Bayern, "Bayern", ""));
         datos.add(new Lista_entrada(R.drawable.Liverpool, "Liverpool", ""));
         datos.add(new Lista_entrada(R.drawable.Madrid, "Real Madrid", ""));
-        datos.add(new Lista_entrada(R.drawable.milan, "Milan", ""));
+        datos.add(new Lista_entrada(R.drawable.milan, "Milán", ""));
 
         ListView lista = (ListView) findViewById(R.id.ListView_listado);
         lista.setAdapter(new Lista_adaptador(this, R.layout.entrada, datos){
