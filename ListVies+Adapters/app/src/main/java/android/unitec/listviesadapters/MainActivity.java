@@ -19,11 +19,11 @@ public class MainActivity extends Activity {
 
         ArrayList<Lista_entrada> datos = new ArrayList<Lista_entrada>();
 
-        datos.add(new Lista_entrada(R.drawable.Barcelona, "Barcelona", ""));
-        datos.add(new Lista_entrada(R.drawable.Bayern, "Bayern", ""));
-        datos.add(new Lista_entrada(R.drawable.Liverpool, "Liverpool", ""));
-        datos.add(new Lista_entrada(R.drawable.Madrid, "Real Madrid", ""));
-        datos.add(new Lista_entrada(R.drawable.milan, "Milan", ""));
+        datos.add(new Lista_entrada(R.drawable.imgbarcelona, "Barcelona", ""));
+        datos.add(new Lista_entrada(R.drawable.imgbayern, "Bayern", ""));
+        datos.add(new Lista_entrada(R.drawable.imgliverpool, "Liverpool", ""));
+        datos.add(new Lista_entrada(R.drawable.imgmadrid, "Real Madrid", ""));
+        datos.add(new Lista_entrada(R.drawable.imgmilan, "Milan", ""));
 
         ListView lista = (ListView) findViewById(R.id.ListView_listado);
         lista.setAdapter(new Lista_adaptador(this, R.layout.entrada, datos){
