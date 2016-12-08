@@ -18,7 +18,7 @@ public class MainActivity extends Activity {
         setContentView(R.layout.listado);
 
         ArrayList<Lista_entrada> datos = new ArrayList<Lista_entrada>();
-        
+
         datos.add(new Lista_entrada(R.drawable.imgbarcelona, "Barcelona", ""));
         datos.add(new Lista_entrada(R.drawable.imgbayern, "Bayern", ""));
         datos.add(new Lista_entrada(R.drawable.imgliverpool, "Liverpool", ""));
@@ -44,10 +44,20 @@ public class MainActivity extends Activity {
             @Override
             public void onItemClick(AdapterView<?> pariente, View view, int posicion, long id) {
                 Lista_entrada elegido = (Lista_entrada) pariente.getItemAtPosition(posicion);
-
-                CharSequence texto = "Seleccionado: " + elegido.get_textoDebajo();
-                Toast toast = Toast.makeText(MainActivity.this, texto, Toast.LENGTH_LONG);
-                toast.show();
+                if(posicion==0) {
+                    CharSequence texto = "El mejor equipo " + elegido.get_textoDebajo();
+                    Toast toast = Toast.makeText(MainActivity.this, texto, Toast.LENGTH_LONG);
+                    toast.show();
+                }
+                else if(posicion==3){
+                    CharSequence texto = "En realidad el Real Madrid es el mejor " + elegido.get_textoDebajo();
+                    Toast toast = Toast.makeText(MainActivity.this, texto, Toast.LENGTH_LONG);
+                    toast.show();
+                }else{
+                    CharSequence texto = "Seleccionado: " + elegido.get_textoDebajo();
+                    Toast toast = Toast.makeText(MainActivity.this, texto, Toast.LENGTH_LONG);
+                    toast.show();
+                }
             }
         });
     }
