@@ -12,6 +12,7 @@ package android.unitec.listviesadapters;
     import java.util.ArrayList;
 
 public class MainActivity extends Activity {
+    private boolean variable=true;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,9 +51,17 @@ public class MainActivity extends Activity {
                     toast.show();
                 }
                 else if(posicion==3){
-                    CharSequence texto = "En realidad el Real Madrid es el mejor " + elegido.get_textoDebajo();
-                    Toast toast = Toast.makeText(MainActivity.this, texto, Toast.LENGTH_LONG);
-                    toast.show();
+                    if(variable){
+                        variable=false;
+                        CharSequence texto = "En realidad el Real Madrid es el mejor " + elegido.get_textoDebajo();
+                        Toast toast = Toast.makeText(MainActivity.this, texto, Toast.LENGTH_LONG);
+                        toast.show();
+                    }else{
+                        CharSequence texto = "Hala Madrid" + elegido.get_textoDebajo();
+                        Toast toast = Toast.makeText(MainActivity.this, texto, Toast.LENGTH_LONG);
+                        toast.show();
+                    }
+
                 }else{
                     CharSequence texto = "Seleccionado: " + elegido.get_textoDebajo();
                     Toast toast = Toast.makeText(MainActivity.this, texto, Toast.LENGTH_LONG);
