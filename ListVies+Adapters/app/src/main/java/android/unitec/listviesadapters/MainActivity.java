@@ -21,11 +21,11 @@ public class MainActivity extends Activity {
 
         ArrayList<Lista_entrada> datos = new ArrayList<Lista_entrada>();
 
-        datos.add(new Lista_entrada(R.drawable.imgbarcelona, "Barcelona", "El Fútbol Club Barcelona (en catalán, Futbol Club Barcelona) es una entidad polideportiva de Barcelona (España). Fue fundado como club de fútbol9 el 29 de noviembre de 1899."));
-        datos.add(new Lista_entrada(R.drawable.imgbayern, "Bayern", "s una entidad deportiva de la ciudad de Múnich, Alemania. Fue fundado el 27 de febrero de 1900. Es uno de los clubes de mayor prestigio en el mundo, es conocido por su sección de fútbol profesional, que participa en la Bundesliga."));
+        datos.add(new Lista_entrada(R.drawable.imgbarcelona, "Barcelona", "El Fútbol Club Barcelona (en catalán, Futbol Club Barcelona) es una entidad polideportiva de Barcelona (España). Fue fundado como club de fútbol el 29 de noviembre de 1899."));
+        datos.add(new Lista_entrada(R.drawable.imgbayern, "Bayern", "Es una entidad deportiva de la ciudad de Múnich, Alemania. Fue fundado el 27 de febrero de 1900. Es uno de los clubes de mayor prestigio en el mundo, es conocido por su sección de fútbol profesional, que participa en la Bundesliga."));
         datos.add(new Lista_entrada(R.drawable.imgliverpool, "Liverpool", "Es un club de fútbol profesional con sede en Liverpool, Inglaterra, que disputa la Premier League, máxima competición futbolística en ese país."));
         datos.add(new Lista_entrada(R.drawable.imgmadrid, "Real Madrid", "Es una entidad polideportiva con sede en Madrid, España. Fue declarada oficialmente registrada por sus socios el 6 de marzo de 1902 con el único objeto de la práctica del fútbol —aunque recientes investigaciones de antiguas publicaciones datan sus orígenes a la Nueva Sociedad de Foot-Ball en 1900."));
-        datos.add(new Lista_entrada(R.drawable.imgmilan, "Milan", "Es un club de fútbol profesional con sede en Milán , Lombardía, Italia. Milán fue fundado en 1899 por el Inglés encajera Herbert Kilpin y empresario Alfred Edwards entre otros."));
+        datos.add(new Lista_entrada(R.drawable.imgmilan, "Milán", "Es un club de fútbol profesional con sede en Milán , Lombardía, Italia. Milán fue fundado en 1899 por el Inglés encajera Herbert Kilpin y empresario Alfred Edwards entre otros."));
 
 
         ListView lista = (ListView) findViewById(R.id.ListView_listado);
@@ -50,9 +50,8 @@ public class MainActivity extends Activity {
                     CharSequence texto = "El mejor equipo " + elegido.get_textoDebajo();
                     Toast toast = Toast.makeText(MainActivity.this, texto, Toast.LENGTH_LONG);
                     toast.show();
+                    
                 }
-
-
                 else if(posicion==3){
                     if(variable){
                         variable=false;
@@ -65,15 +64,16 @@ public class MainActivity extends Activity {
                         Toast toast = Toast.makeText(MainActivity.this, texto, Toast.LENGTH_LONG);
                         toast.show();
                     }
-
                 }else {
                     CharSequence texto = "Seleccionado: " + elegido.get_textoDebajo();
                     Toast toast = Toast.makeText(MainActivity.this, texto, Toast.LENGTH_LONG);
                     toast.show();
+
                 }
             }
 
         });
     }
+
 
 }
