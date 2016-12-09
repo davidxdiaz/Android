@@ -13,6 +13,7 @@ package android.unitec.listviesadapters;
     import java.util.ArrayList;
 
 public class MainActivity extends Activity {
+    private boolean variable=true;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,7 +50,7 @@ public class MainActivity extends Activity {
                     CharSequence texto = "El mejor equipo " + elegido.get_textoDebajo();
                     Toast toast = Toast.makeText(MainActivity.this, texto, Toast.LENGTH_LONG);
                     toast.show();
-                    Intent inte = new Intent(this, Barcelona.class);
+                    Intent inte = new Intent(null, Barcelona.class);
 
                     startActivity(inte);
                 }
@@ -57,26 +58,33 @@ public class MainActivity extends Activity {
                     CharSequence texto = "Seleccionado: " + elegido.get_textoDebajo();
                     Toast toast = Toast.makeText(MainActivity.this, texto, Toast.LENGTH_LONG);
                     toast.show();
-                    Intent inte = new Intent(this, Bayern.class);
+                    Intent inte = new Intent(null, Bayern.class);
                     startActivity(inte);
                 }else if(posicion==2){
                     CharSequence texto = "Seleccionado: " + elegido.get_textoDebajo();
                     Toast toast = Toast.makeText(MainActivity.this, texto, Toast.LENGTH_LONG);
                     toast.show();
-                    Intent inte = new Intent(this, Liverpool.class);
+                    Intent inte = new Intent(null, Liverpool.class);
                     startActivity(inte);
                 }
                 else if(posicion==3){
+                    if(variable){
+                        variable=false;
+                        CharSequence texto = "En realidad el Real Madrid es el mejor " + elegido.get_textoDebajo();
+                        Toast toast = Toast.makeText(MainActivity.this, texto, Toast.LENGTH_LONG);
+                        toast.show();
+                    }else{
+                        CharSequence texto = "Hala Madrid" + elegido.get_textoDebajo();
+                        Toast toast = Toast.makeText(MainActivity.this, texto, Toast.LENGTH_LONG);
+                        toast.show();
+                    }
+                    Intent inte = new Intent(null, RealMadrid.class);
+                    startActivity(inte);
+                }else if(posicion==4){
                     CharSequence texto = "En realidad el Real Madrid es el mejor " + elegido.get_textoDebajo();
                     Toast toast = Toast.makeText(MainActivity.this, texto, Toast.LENGTH_LONG);
                     toast.show();
-                    Intent inte = new Intent(this, RealMadrid.class);
-                    startActivity(inte);
-                }else if(posicion==4){
-                    CharSequence texto = "Seleccionado: " + elegido.get_textoDebajo();
-                    Toast toast = Toast.makeText(MainActivity.this, texto, Toast.LENGTH_LONG);
-                    toast.show();
-                    Intent inte = new Intent(this, Milan.class);
+                    Intent inte = new Intent(null, Milan.class);
                     startActivity(inte);
                 }
             }
