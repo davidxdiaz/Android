@@ -1,5 +1,6 @@
 package android.unitec.listviesadapters;
 
+    import android.content.Intent;
     import android.os.Bundle;
     import android.app.Activity;
     import android.view.View;
@@ -48,15 +49,35 @@ public class MainActivity extends Activity {
                     CharSequence texto = "El mejor equipo " + elegido.get_textoDebajo();
                     Toast toast = Toast.makeText(MainActivity.this, texto, Toast.LENGTH_LONG);
                     toast.show();
+                    Intent inte = new Intent(this, Barcelona.class);
+
+                    startActivity(inte);
+                }
+                else if(posicion==1){
+                    CharSequence texto = "Seleccionado: " + elegido.get_textoDebajo();
+                    Toast toast = Toast.makeText(MainActivity.this, texto, Toast.LENGTH_LONG);
+                    toast.show();
+                    Intent inte = new Intent(this, Bayern.class);
+                    startActivity(inte);
+                }else if(posicion==2){
+                    CharSequence texto = "Seleccionado: " + elegido.get_textoDebajo();
+                    Toast toast = Toast.makeText(MainActivity.this, texto, Toast.LENGTH_LONG);
+                    toast.show();
+                    Intent inte = new Intent(this, Liverpool.class);
+                    startActivity(inte);
                 }
                 else if(posicion==3){
                     CharSequence texto = "En realidad el Real Madrid es el mejor " + elegido.get_textoDebajo();
                     Toast toast = Toast.makeText(MainActivity.this, texto, Toast.LENGTH_LONG);
                     toast.show();
-                }else{
+                    Intent inte = new Intent(this, RealMadrid.class);
+                    startActivity(inte);
+                }else if(posicion==4){
                     CharSequence texto = "Seleccionado: " + elegido.get_textoDebajo();
                     Toast toast = Toast.makeText(MainActivity.this, texto, Toast.LENGTH_LONG);
                     toast.show();
+                    Intent inte = new Intent(this, Milan.class);
+                    startActivity(inte);
                 }
             }
         });
